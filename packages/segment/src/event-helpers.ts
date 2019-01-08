@@ -87,3 +87,9 @@ export const identifyUser = (
     options,
   };
 };
+
+export const reset = () => {
+  return {
+    hitType: 'reset',
+  };
+};
