@@ -88,7 +88,13 @@ export const identifyUser = (
   };
 };
 
-export const reset = () => {
+export const reset = (
+  eventDef: EventDefinition<{
+    userId?: string;
+  }>
+): EventDefinition => (a, p, n) => {
+  const b = eventDef(a, p, n);
+  console.log({ b, a, p, n });
   return {
     hitType: 'reset',
   };
